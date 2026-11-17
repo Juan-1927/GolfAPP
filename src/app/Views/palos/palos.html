@@ -1,0 +1,10 @@
+<div style="padding: 20px;">
+  <h2>Sección Palos</h2>
+  <app-table
+    etiqueta="Palos de Golf"
+    rutaFormulario="/formulario"
+    [datos]="palos()"
+    [error]="error()"
+    (eliminar)="eliminar($event)"
+  />
+</div>

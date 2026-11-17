@@ -1,0 +1,10 @@
+<div style="padding: 20px;">
+  <h2>Sección Vestimenta</h2>
+  <app-table
+    etiqueta="Vestimenta de golf"
+    rutaFormulario="/vestimenta/formulario"
+    [datos]="prendas()"
+    [error]="error()"
+    (eliminar)="eliminar($event)"
+  />
+</div>

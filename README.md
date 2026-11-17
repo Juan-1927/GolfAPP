@@ -1,6 +1,34 @@
 # GolfAPP
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.2.24.
+Full-stack golf store management application with an Angular frontend and an Express/PostgreSQL API.
+
+## Project structure
+
+- `src/`: Angular frontend.
+- `backend/`: Express API, PostgreSQL schema, and backend source.
+
+## Run the frontend
+
+Install dependencies and start the Angular development server:
+
+```bash
+npm install
+npm start
+```
+
+The frontend is served at `http://localhost:4200/`.
+
+## Run the backend
+
+Create `backend/.env` from `backend/.env.example`, then configure the PostgreSQL connection values. Do not commit `.env`.
+
+```bash
+cd backend
+npm install
+npm run dev
+```
+
+The API starts on port `3000` by default. Initialize the database with `backend/database/schema.sql`.
 
 ## Development server
 

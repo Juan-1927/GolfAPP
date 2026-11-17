@@ -1,0 +1,10 @@
+<div style="padding: 20px;">
+  <h2>Sección Equipos</h2>
+  <app-table
+    etiqueta="Equipos de golf"
+    rutaFormulario="/equipos/formulario"
+    [datos]="equipos()"
+    [error]="error()"
+    (eliminar)="eliminar($event)"
+  />
+</div>

@@ -1,0 +1,18 @@
+/* Centra la tarjeta en la pantalla */
+.contenedor {
+  display: flex;
+  justify-content: center;
+  padding: 40px 16px;
+}
+
+/* Ancho de la tarjeta */
+.tarjeta {
+  width: 100%;
+  max-width: 400px;
+}
+
+/* Cada campo ocupa todo el ancho de la tarjeta */
+.campo {
+  width: 100%;
+  margin-top: 8px;
+}

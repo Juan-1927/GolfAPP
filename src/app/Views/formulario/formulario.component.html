@@ -1,0 +1,22 @@
+<div class="selector">
+  <mat-button-toggle-group
+    aria-label="Tipo de producto a agregar"
+    [value]="seccion()"
+    (change)="seccion.set($event.value)">
+    <mat-button-toggle value="palos">Palos</mat-button-toggle>
+    <mat-button-toggle value="equipos">Equipos</mat-button-toggle>
+    <mat-button-toggle value="vestimenta">Vestimenta</mat-button-toggle>
+  </mat-button-toggle-group>
+</div>
+
+@switch (seccion()) {
+  @case ('palos') {
+    <app-palos-form />
+  }
+  @case ('equipos') {
+    <app-equipos-form />
+  }
+  @case ('vestimenta') {
+    <app-vestimenta-form />
+  }
+}
