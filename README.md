@@ -1,11 +1,6 @@
 # GolfAPP
 
-Full-stack golf store management application with an Angular frontend and an Express/PostgreSQL API.
-
-## Project structure
-
-- `src/`: Angular frontend.
-- `backend/`: Express API, PostgreSQL schema, and backend source.
+Angular frontend for the GolfAPP golf store management application. The backend API is maintained separately in [Backend-GolfAPP](https://github.com/Juan-1927/Backend-GolfAPP).
 
 ## Run the frontend
 
@@ -17,18 +12,6 @@ npm start
 ```
 
 The frontend is served at `http://localhost:4200/`.
-
-## Run the backend
-
-Create `backend/.env` from `backend/.env.example`, then configure the PostgreSQL connection values. Do not commit `.env`.
-
-```bash
-cd backend
-npm install
-npm run dev
-```
-
-The API starts on port `3000` by default. Initialize the database with `backend/database/schema.sql`.
 
 ## Development server
 
