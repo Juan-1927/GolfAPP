@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { ReactiveFormsModule, FormGroup, FormControl, Validators } from '@angular/forms';
 import { MatCardModule } from '@angular/material/card';
 import { MatInputModule } from '@angular/material/input';
@@ -10,7 +10,7 @@ import { LoginService } from '../../Services/login';
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [ReactiveFormsModule, MatCardModule, MatInputModule, MatButtonModule],
+  imports: [ReactiveFormsModule, MatCardModule, MatInputModule, MatButtonModule, RouterLink],
   templateUrl: './login.html',
   styleUrl: './login.css',
 })
@@ -28,18 +28,9 @@ export class Login {
       return;
     }
 
-    // El formulario es válido: se imprimen sus campos en la consola.
-    console.log(this.loginForm.controls);
-
     this.loginService.login(this.loginForm.value).subscribe({
       next: () => {
-        // Guardar el usuario y la contraseña en el localStorage
         localStorage.setItem('usuario', this.loginForm.controls['usuario'].value ?? '');
-        localStorage.setItem('contrasena', this.loginForm.controls['contrasena'].value ?? '');
-
-        // Obtener el usuario y la contraseña del localStorage
-        console.log('Usuario guardado:', localStorage.getItem('usuario'));
-        console.log('Contraseña guardada:', localStorage.getItem('contrasena'));
 
         Swal.fire({
           icon: 'success',

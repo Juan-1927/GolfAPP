@@ -16,4 +16,11 @@ export class LoginService {
   login(body: any): Observable<any> {
     return this.http.post<any>(this.url, body);
   }
+
+  registrar(body: { usuario: string; contrasena: string }): Observable<{ message: string; usuario: string }> {
+    return this.http.post<{ message: string; usuario: string }>(
+      `${environment.apiUrl}/registro`,
+      body
+    );
+  }
 }

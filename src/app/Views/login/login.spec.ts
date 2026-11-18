@@ -15,7 +15,6 @@ describe('Login', () => {
     });
     const navigate = vi.spyOn(TestBed.inject(Router), 'navigate').mockResolvedValue(true);
     const alerta = vi.spyOn(Swal, 'fire').mockResolvedValue({} as never);
-    vi.spyOn(console, 'log').mockImplementation(() => {});
     localStorage.clear();
     const fixture = TestBed.createComponent(Login);
     fixture.detectChanges();
@@ -36,16 +35,15 @@ describe('Login', () => {
     expect(login).not.toHaveBeenCalled();
   });
 
-  it('si es correcto: guarda en localStorage, muestra la alerta de éxito y va a palos', () => {
+  it('si es correcto: guarda el usuario, muestra la alerta de éxito y va a palos', () => {
     const { component, login, navigate, alerta } = crear(of({}));
     component.loginForm.setValue({ usuario: 'juan', contrasena: '12345' });
 
     component.ingresar();
 
-    expect(console.log).toHaveBeenCalledWith(component.loginForm.controls);
     expect(login).toHaveBeenCalledWith({ usuario: 'juan', contrasena: '12345' });
     expect(localStorage.getItem('usuario')).toBe('juan');
-    expect(localStorage.getItem('contrasena')).toBe('12345');
+    expect(localStorage.getItem('contrasena')).toBeNull();
     expect(alerta).toHaveBeenCalledWith(expect.objectContaining({ icon: 'success' }));
     expect(navigate).toHaveBeenCalledWith(['/palos']);
   });

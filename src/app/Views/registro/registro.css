@@ -1,0 +1,20 @@
+.contenedor {
+  display: flex;
+  justify-content: center;
+  padding: 40px 16px;
+}
+
+.tarjeta {
+  width: 100%;
+  max-width: 400px;
+}
+
+.campo {
+  width: 100%;
+  margin-top: 8px;
+}
+
+.enlace-login {
+  text-align: center;
+  margin: 8px 16px 16px;
+}
